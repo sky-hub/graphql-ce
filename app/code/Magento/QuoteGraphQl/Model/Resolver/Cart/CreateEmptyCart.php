@@ -16,6 +16,9 @@ use Magento\Quote\Api\GuestCartManagementInterface;
 use Magento\Quote\Api\CartManagementInterface;
 use Magento\Authorization\Model\UserContextInterface;
 
+/**
+ * {@inheritdoc}
+ */
 class CreateEmptyCart implements ResolverInterface
 {
     /**
@@ -56,6 +59,9 @@ class CreateEmptyCart implements ResolverInterface
         $this->userContext = $userContext;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function resolve(Field $field, $context, ResolveInfo $info, array $value = null, array $args = null) : Value
     {
         $customerId = $this->userContext->getUserId();
