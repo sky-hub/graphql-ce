@@ -1,0 +1,19 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
+type Query {
+    quote(quoteId: String): Quote @resolver(class: "Magento\\QuoteGraphQl\\Model\\Resolver\\QuoteResolver") @doc(description: "Quote")
+}
+
+type Quote @doc(description: "") {
+    store_id: Int @doc(description: "")
+    customer: Customer @doc(description: "")
+    customer_note: String @doc(description: "")
+    currency: CurrencyEnum @doc(description: "")
+    is_guest: Boolean @doc(description: "")
+    is_virtual: Boolean @doc(description: "")
+    items_qty: Int @doc(description: "")
+    items_count: Int @doc(description: "")
+    billing_address: CustomerAddress @doc(description: "")
+    items: [QuoteItem] @doc(description: "")
+}

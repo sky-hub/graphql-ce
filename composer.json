@@ -182,6 +182,7 @@
         "magento/module-product-alert": "*",
         "magento/module-product-video": "*",
         "magento/module-quote": "*",
+        "magento/module-quote-graph-ql": "*",
         "magento/module-quote-analytics": "*",
         "magento/module-release-notification": "*",
         "magento/module-reports": "*",
