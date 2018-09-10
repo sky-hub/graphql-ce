@@ -9,7 +9,6 @@ namespace Magento\CustomerGraphQl\Model\Resolver\Customer\Account;
 
 use Magento\Authorization\Model\UserContextInterface;
 use Magento\Integration\Api\CustomerTokenServiceInterface;
-use Magento\Customer\Model\Customer;
 use Magento\Framework\GraphQl\Config\Element\Field;
 use Magento\Framework\GraphQl\Exception\GraphQlAuthorizationException;
 use Magento\Framework\GraphQl\Query\Resolver\Value;
