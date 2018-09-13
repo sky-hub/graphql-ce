@@ -7,6 +7,9 @@
  */
 namespace Magento\TestFramework\Bootstrap;
 
+/**
+ * Class WebapiDocBlock
+ */
 class WebapiDocBlock extends \Magento\TestFramework\Bootstrap\DocBlock
 {
     /**
@@ -20,7 +23,7 @@ class WebapiDocBlock extends \Magento\TestFramework\Bootstrap\DocBlock
     {
         $subscribers = parent::_getSubscribers($application);
         $subscribers[] = new \Magento\TestFramework\Annotation\ApiDataFixture($this->_fixturesBaseDir);
-        $subscribers[] = new \Magento\TestFramework\Annotation\ApiConfigFixture($this->_fixturesBaseDir);
+        $subscribers[] = new \Magento\TestFramework\Annotation\ApiConfigFixture();
         return $subscribers;
     }
 }

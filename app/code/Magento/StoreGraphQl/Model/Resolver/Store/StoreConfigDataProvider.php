@@ -56,6 +56,8 @@ class StoreConfigDataProvider
     }
 
     /**
+     * Get store config data
+     *
      * @return array
      */
     public function getStoreConfigData(): array
@@ -68,6 +70,8 @@ class StoreConfigDataProvider
     }
 
     /**
+     * Get base config data
+     *
      * @return array
      */
     private function getBaseConfigData() : array
@@ -97,6 +101,8 @@ class StoreConfigDataProvider
     }
 
     /**
+     * Get extended config data
+     *
      * @return array
      */
     private function getExtendedConfigData()
