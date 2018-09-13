@@ -13,8 +13,9 @@ namespace Magento\TestFramework\Bootstrap;
 class WebapiDocBlock extends \Magento\TestFramework\Bootstrap\DocBlock
 {
     /**
-     * Get list of subscribers. In addition, register magentoApiDataFixture and magentoApiConfigFixture
-     * annotation processors
+     * Get list of subscribers
+     *
+     * In addition, register magentoApiDataFixture and magentoApiConfigFixture annotation processors
      *
      * @param \Magento\TestFramework\Application $application
      * @return array
