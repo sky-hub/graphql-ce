@@ -33,6 +33,7 @@ class ThemeConfigTest extends GraphQlAbstract
      */
     public function testGetDefaultStoreThemeConfig()
     {
+        $this->markTestIncomplete('https://github.com/magento/graphql-ce/issues/167');
         $expectedConfigs = [
             'head_shortcut_icon' => 'fixture_second_store_icon.ico',
             'default_title' => 'Default Store Title',
@@ -101,6 +102,7 @@ QUERY;
      */
     public function testGetNotDefaultStoreThemeConfig()
     {
+        $this->markTestIncomplete('https://github.com/magento/graphql-ce/issues/167');
         $expectedConfigs = [
             'head_shortcut_icon' => 'test_store_icon.ico',
             'default_title' => 'Test Store Title',

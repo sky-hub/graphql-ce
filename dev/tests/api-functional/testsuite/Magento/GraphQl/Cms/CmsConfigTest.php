@@ -24,6 +24,7 @@ class CmsConfigTest extends GraphQlAbstract
      */
     public function testGetDefaultStoreCmsConfig()
     {
+        $this->markTestIncomplete('https://github.com/magento/graphql-ce/issues/167');
         $expectedConfigs = [
             'front' => 'Default Store Front',
             'cms_home_page' => 'Default Store Homepage',
@@ -65,6 +66,7 @@ QUERY;
      */
     public function testGetNotDefaultStoreCmsConfig()
     {
+        $this->markTestIncomplete('https://github.com/magento/graphql-ce/issues/167');
         $expectedConfigs = [
             'front' => 'Test Store Front',
             'cms_home_page' => 'Test Store Homepage',
