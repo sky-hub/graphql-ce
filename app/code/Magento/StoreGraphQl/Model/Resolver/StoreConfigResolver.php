@@ -41,6 +41,6 @@ class StoreConfigResolver implements ResolverInterface
         array $value = null,
         array $args = null
     ) {
-        return [];
+        return $this->storeConfigDataProvider->getStoreConfigData();
     }
 }
