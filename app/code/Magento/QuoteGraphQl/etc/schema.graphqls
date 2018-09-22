@@ -2,7 +2,7 @@
 # See COPYING.txt for license details.
 
 type Query {
-    getAvailableShippingMethodsOnCart(input: AvailableShippingMethodsOnCartInput): AvailableShippingMethodsOnCartOutput @doc(description:"Returns available shipping methods for cart by address/address_id")
+    getAvailableShippingMethodsOnCart(input: AvailableShippingMethodsOnCartInput): AvailableShippingMethodsOnCartOutput @resolver(class: "\\Magento\\QuoteGraphQl\\Model\\Resolver\\Cart\\GetAvailableShippingMethodsOnCart") @doc(description:"Returns available shipping methods for cart by address/address_id")
 }
 
 type Mutation {
@@ -40,6 +40,7 @@ input CartAddressInput {
     street: [String!]!
     city: String!
     region: String
+    region_id: Int
     postcode: String
     country_code: String!
     telephone: String!
@@ -72,7 +73,15 @@ type SetShippingMethodsOnCartOutput {
 type AvailableShippingMethodsOnCartInput {
     cart_id: String!
     customer_address_id: Int
-    address: CartAddressInput
+    address: AddressForShippingMethod
+}
+
+# This address fields are used to get the shipping methods for not logged in customers and no cart address
+input AddressForShippingMethod {
+    region: String
+    region_id: Int
+    postcode: String
+    country_code: String!
 }
 
 type AvailableShippingMethodsOnCartOutput {
@@ -131,6 +140,7 @@ type CheckoutShippingMethod {
     code: String
     label: String
     free_shipping: Boolean!
+    is_available: Boolean!
     error_message: String
     # TODO: Add more complex structure for shipping rates
 }
