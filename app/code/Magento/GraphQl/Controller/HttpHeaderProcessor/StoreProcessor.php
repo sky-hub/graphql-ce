@@ -11,6 +11,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\GraphQl\Exception\GraphQlInputException;
 use Magento\GraphQl\Controller\HttpHeaderProcessorInterface;
 use Magento\Store\Model\StoreManagerInterface;
+use Magento\Framework\App\HttpRequestInterface;
 
 /**
  * Process the "Store" header entry
@@ -35,10 +36,12 @@ class StoreProcessor implements HttpHeaderProcessorInterface
     /**
      * Handle the value of the store and set the scope
      *
-     * {@inheritDoc}
-     * @throws NoSuchEntityException
+     * @param string $headerValue
+     * @param HttpRequestInterface $request
+     * @throws GraphQlInputException
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function processHeaderValue(string $headerValue) : void
+    public function processHeaderValue(string $headerValue, HttpRequestInterface $request) : void
     {
         if ($headerValue) {
             $storeCode = ltrim(rtrim($headerValue));

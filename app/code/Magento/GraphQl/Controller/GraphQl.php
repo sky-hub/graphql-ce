@@ -108,7 +108,11 @@ class GraphQl implements FrontControllerInterface
         try {
             /** @var Http $request */
             $this->requestProcessor->processHeaders($request);
-            $data = $this->jsonSerializer->unserialize($request->getContent());
+            if ($request->isPost()) {
+                $data = $this->jsonSerializer->unserialize($request->getContent());
+            } else {
+                $data = $request->getParams();
+            }
 
             $query = isset($data['query']) ? $data['query'] : '';
 
